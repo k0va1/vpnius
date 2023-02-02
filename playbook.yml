@@ -1,0 +1,5 @@
+---
+  - name: k0va1 VPN
+    hosts: 'all'
+    roles:
+      - wireguard

@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include k0va1.wireguard_vpn"
+      include_role:
+        name: "k0va1.wireguard_vpn"
