@@ -50,3 +50,4 @@ After command succeds you'll find config files and `.png` QR codes in the curren
 - [ ] Yandex support
 - [ ] Selectel support
 - [ ] OpenVPN support
+- [ ] Use Apline base image
