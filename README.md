@@ -17,6 +17,7 @@
 
 1. Sign up in [Digital ocean](https://m.do.co/c/d461fa06b15a)
 2. Go to [tokens](https://cloud.digitalocean.com/account/api/tokens) page and create new token
+3. Setup payment method
 4. Run the following command
 
 You can configure vpn with ENV varialbes:
