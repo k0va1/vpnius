@@ -21,10 +21,10 @@
 
 You can configure vpn with ENV varialbes:
 
-|Name|Description|Default|
-|---|---|---|
-|TF_VAR_region| Region where vpn will be setup | ams3 |
-|TF_VAR_wireguard_peers| How many configs you need. Comma-separated names | laptop |
+|Name|Description|Default|Available|
+|---|---|---|---|
+|TF_VAR_region| Region where vpn will be setup | ams3 | nyc1, nyc2, nyc3, sfo1, sfo2, tor1, lon1, fra1, sgp1, blr1, ams2|
+|TF_VAR_wireguard_peers| How many configs you need. Comma-separated names | laptop | any valid filename |
 
 ```
 docker run --rm \
@@ -33,6 +33,8 @@ docker run --rm \
   -v `pwd`:/opt/vpnius/config
   hetsketch/vpnius:latest
   ```
+
+After command succeds you'll find config files and `.png` QR codes in the current directory.
 
 5. Install Wireguard client on your mobile/laptop
 6. Import config to client
