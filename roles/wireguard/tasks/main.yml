@@ -108,14 +108,16 @@
     patterns: "peer_*.conf,peer_*.png"
   register: files_to_copy
 
-- name: Print
-  ansible.builtin.debug:
-    msg:
-    - "Files {{files_to_copy}}"
+- name: Chanage files permissions to 777
+  ansible.builtin.file:
+    path: "{{ item.path }}"
+    owner: "{{user}}"
+    mode: '0777'
+  with_items: "{{ files_to_copy.files }}"
 
 - name: Copy files to local machine
   fetch:
     src: "{{ item.path }}"
-    dest: "~"
+    dest: "{{local_wireguard_config_folder}}"
     flat: yes
   with_items: "{{ files_to_copy.files }}"

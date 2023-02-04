@@ -2,8 +2,6 @@ FROM ubuntu:22.04
 
 ARG TERRAFORM_VERSION=1.3.7
 
-ENV DO_TOKEN
-
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get install -y \
   git \
   ansible \
@@ -15,8 +13,12 @@ RUN wget --quiet https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/t
   && mv terraform /usr/bin \
   && rm terraform_${TERRAFORM_VERSION}_linux_amd64.zip
 
-WORKDIR wireguard_vpn
+WORKDIR "/opt/vpnius"
+
+RUN mkdir -p config
 
 COPY . .
 
-CMD ["bin/bash"]
+ENTRYPOINT ["/usr/bin/terraform"]
+
+CMD ["apply", "-auto-approve"]

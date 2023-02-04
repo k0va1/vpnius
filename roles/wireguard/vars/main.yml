@@ -1,6 +1,7 @@
 ---
-user: "wireguard"
-wireguard_config_folder: "/opt/wireguard-server/config"
+user: "vpnius"
 services_folder: "/home/{{user}}/services"
+wireguard_config_folder: "/opt/{{user}}/config"
+local_wireguard_config_folder: "/opt/{{user}}/config/"
 wireguard_port: "51820"
 wireguard_peers: "laptop" # comma separated peers without spaces

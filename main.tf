@@ -37,7 +37,7 @@ resource "digitalocean_droplet" "wireguard" {
   }
 
   provisioner "local-exec" {
-    command = "ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -u root -i '${self.ipv4_address},' --private-key id_rsa.pem playbook.yml"
+    command = "ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -u root -i '${self.ipv4_address},' -e 'wireguard_peers=${var.wireguard_peers}' --private-key id_rsa.pem playbook.yml"
   }
 }
 

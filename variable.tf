@@ -1,3 +1,9 @@
+variable "wireguard_peers" {
+  type = string
+  description = "List of comma-separated peers"
+  default = "laptop"
+}
+
 variable "do_token" {
   type = string
   description = "Digital Ocean token"
@@ -18,7 +24,7 @@ variable "image" {
 variable "name" {
   type = string
   description = "Service name"
-  default = "wireguard-vpn"
+  default = "vpnius"
 }
 
 variable "size" {
